@@ -1,0 +1,400 @@
+/*Remove the base browser settings and include padding and borders to box sizes.*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Declare some variables that will be used throughout the page. */
+:root {
+    --aqua: #4dd8f1fe;
+    --dark-blue: #36496f;
+    --light-gray: #abbdd2;
+    --bg-gradient: linear-gradient(to bottom right, var(--light-gray), var(--aqua));
+    --bg-gradient2: linear-gradient(to bottom, var(--light-gray), var(--aqua));
+}
+
+html {
+    background-color: var(--light-gray);
+}
+
+body {
+    /* Sans Serif font stack is used to help display the best font for different operating systems. */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    color: var(--dark-blue);
+}
+
+h1, h2, h3, h4 {
+    background-color: var(--aqua);
+    background-image: linear-gradient(to bottom, var(--light-gray), var(--aqua));
+    display: inline-block;    
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+.header {
+    background-color: var(--dark-blue);
+    width: 100%;
+}
+
+.header ul {
+    list-style: none;
+}
+
+.header li {
+    font-size: 18px;
+    
+    
+}
+
+.header a {
+    color: var(--aqua);
+    text-decoration: none;
+}
+
+
+/* Use a mobile-first approach by using a column flexbox as the navbar.*/
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/* Add some space between navbar links. */
+.nav-list li {
+   padding: 15px 5px;    
+}
+
+.about-me {
+    background-image: var(--bg-gradient2);
+    text-align: center;
+    
+}
+
+.about-me p {
+    text-wrap: pretty;
+    text-shadow: 1px 1px black;
+    font-size: 16px;
+}
+
+.about-me img {
+    max-width: 88%;
+    max-height: 88%;
+    border-radius: 50%;
+}
+
+/* Avatar image is contained in a flexbox to help control its size and location on the page. */
+.about-me-photo-box {
+    max-height: 88%;
+    max-width: 88%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: var(--bg-gradient2);
+}
+
+/* Position the card headers relative to their container to control their placement */
+.card-header h4 {
+    position: relative;
+    top: 1px;
+    
+}
+/* Add flex item values and other styles for the smaller project cards. */
+.card {
+    border: solid var(--dark-blue) 10px;
+    border-radius: 10px;
+    flex: 1 1 40%;
+    background-color: black;  
+    padding: 10px;
+    margin: 10px;
+} 
+/* Add flex item values and other styles for the big project card. */
+.first-card {
+    flex: 0 1 100%;
+    margin: 10px; 
+    border: solid var(--dark-blue) 10px;
+    border-radius: 10px;
+    background-color: black;
+    padding: 10px;
+}
+/* Contain the big project photo within its container and hide any overflow content. */
+.first-photo {
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 10px;
+}
+/* Contain the smaller project photos within their container and hide overflow content.  */
+.photo {
+    border-radius: 10px;
+    object-fit: contain;
+    overflow: hidden;
+}
+/* Allow the big project img to expand to the full width of its container. */
+.first-photo img {
+    width: 100%;
+}
+/* Allow the smaller project images to expand to the full width of their containers. */
+.photo img {
+    width: 100%;  
+}
+/* Establish a flexbox container for the About Me section to control its children as flex items. */
+.about-me-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/*Establish a flexbox container for the My Work (Projects) section to control its children as flex items. */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: stretch;
+    width: 100%;
+    /* Use a transition to ease the jumping of columns when screen resizes. */ 
+    transition: flex-basis 500ms linear;
+}
+/*Establish the footer container as a flexbox to control its children as flex items. */
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--dark-blue);
+}
+
+footer ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.footer-list li {
+    font-size: 18px;
+    padding: 20px;
+    float: right;
+}
+
+.footer-list a {
+    color: var(--aqua);
+    text-decoration: none;
+}
+
+.section-title {
+    margin: 10px 0 10px 0;
+}
+
+.projects {
+    text-align: center;
+      
+}
+
+.page-title {
+    margin-top: 15px;
+}
+
+/* Add an underline to links when a user hovers over them. */
+li a:hover {
+    text-decoration: none;
+    border-bottom: 3px solid #b1ecec;
+}
+
+/* Add an inset shadow effect when the mouse hovers over the big card. */
+.first-card:hover, .first-card:hover .card-header {
+    box-shadow: inset 0px 0px 10px var(--aqua);
+}
+
+/* Add an inset shadow effect when the mouse hovers over a project card. */ 
+.card:hover, .card:hover .card-header {
+    box-shadow: inset 0px 0px 10px var(--aqua);
+}
+
+/* Add media queries to improve content layout for screens larger than 700px. */
+@media screen and (min-width: 700px) {
+    .nav-bar {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        min-height: 20% vh;
+        
+    }
+
+    .nav-bar li {
+        display: inline;
+        margin: 0 6px 0 6px;
+        font-size: 22px;
+    }
+
+    .nav-bar h1 {
+        margin: 40px;
+        font-size: 35px;
+    }
+    
+    .about-me p {
+        font-size: 20px;
+    }
+
+    .about-me-photo-box {
+        max-width: 20%;
+        max-height: 20%;
+        margin-left: 10px;
+    }
+
+    .first-card {
+        margin: 0 30px 0 30px;
+    }
+
+    .card {
+        margin: 30px 30px 0 30px;
+        flex: 1 1 20%;
+    }
+
+    .about-me h2, .projects h2 {
+        font-size: 30px;
+    }
+
+    .projects h2 {
+        margin-bottom: 20px;
+    }
+
+    .footer-container {
+        margin-top: 20px;
+        padding: 20px 0 20px 0;
+    }
+
+    .footer-container h4 {
+        font-size: 26px;
+    }
+
+    .footer-container li {
+        font-size: 23px;
+    }
+}
+
+/* Add media queries to improve content layout for screens larger than 900px.*/
+@media screen and (min-width: 900px) {
+    .header h1 {
+        font-size: 40px;
+    }
+
+    .header li a {
+        font-size: 26px;
+    }
+
+    .about-me h2, .projects h2 {
+        font-size: 35px;
+    }
+
+    .about-me h2 {
+        margin-right: 20px;
+    }
+
+    .about-me p {
+        font-size: 24px;
+    }
+
+    .about-me img {
+        margin: 0 40px 0 40px;
+    }
+
+    .about-me-container {
+        margin: 20px;
+    }
+
+    .flex-container {
+        padding: 20px;
+    }
+
+    .footer-container h4 {
+        font-size: 30px;
+    }
+
+    .footer-container li {
+        font-size: 28px;
+        margin: 0 10px 0 10px;
+    }
+}
+/* Add media queries to improve content layout for screens larger than 1200px.*/
+@media screen and (min-width: 1200px) {
+    
+    .header h1 {
+        font-size: 45px;
+    }
+
+    .nav-bar li a {
+        font-size: 28px;
+        
+    }
+
+    .header li a {
+        padding: 0 8px 0 8px;
+    }
+
+    .about-me img {
+        margin: 0 60px 30px 60px;
+    }
+
+    .about-me p {
+        margin: 0 50px 0 50px;
+        font-size: 28px;
+    }
+
+    .about-me h2, .projects h2 {
+        font-size: 40px;
+    }
+
+    .first-card {
+        margin: 0 50px 20px 50px;
+    }
+
+    .card {
+        margin: 20px 50px 20px 50px;
+        flex: 1;
+    }
+
+    .flex-container {
+        padding: 40px;
+    }
+}
+/* Add media queries to improve content layout for screens larger than 1500px.*/
+@media screen and (min-width: 1500px) {
+    .first-card {
+        margin: 0 75px 30px 75px;
+    }
+
+    .card {
+        margin: 30px 75px 30px 75px;
+    }
+
+    .flex-container {
+       padding: 40px 60px 40px 60px;
+    }
+
+    .footer-container h4 {
+        font-size: 40px;
+    }
+
+    .footer-container li {
+        font-size: 34px;
+        margin: 0 30px 0;
+    }
+}
+
