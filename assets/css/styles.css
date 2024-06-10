@@ -7,9 +7,9 @@
 
 /* Declare some variables that will be used throughout the page. */
 :root {
-    --aqua: #4dd8f1fe;
+    --aqua: #e3e3d7da;
     --dark-blue: #36496f;
-    --light-gray: #abbdd2;
+    --light-gray: #2f3135;
     --bg-gradient: linear-gradient(to bottom right, var(--light-gray), var(--aqua));
     --bg-gradient2: linear-gradient(to bottom, var(--light-gray), var(--aqua));
 }
@@ -82,34 +82,46 @@ h4 {
    padding: 15px 5px;    
 }
 
+.about-me h2 {
+    margin-bottom: 20px; 
+}
+
 .about-me {
     background-image: var(--bg-gradient2);
     text-align: center;
     
 }
 
+
+.about-me div { 
+    height: 50vh;
+
+}
+
+
 .about-me p {
     text-wrap: pretty;
     text-shadow: 1px 1px black;
     font-size: 16px;
+    align-self: bottom;
 }
 
 .about-me img {
     max-width: 88%;
-    max-height: 88%;
-    border-radius: 50%;
+    height: 80%;
+    border-radius: 5%;
+    
 }
 
 /* Avatar image is contained in a flexbox to help control its size and location on the page. */
 .about-me-photo-box {
-    max-height: 88%;
-    max-width: 88%;
+    max-height: 94%;
+  width: 88%;
     border-radius: 50%;
+}
+
+.about-me-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-image: var(--bg-gradient2);
 }
 
 /* Position the card headers relative to their container to control their placement */
@@ -159,9 +171,11 @@ h4 {
 /* Establish a flexbox container for the About Me section to control its children as flex items. */
 .about-me-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 80px;
+    
 }
 /*Establish a flexbox container for the My Work (Projects) section to control its children as flex items. */
 .flex-container {
@@ -253,9 +267,10 @@ li a:hover {
     }
 
     .about-me-photo-box {
-        max-width: 20%;
-        max-height: 20%;
+        width: 20%;
+        height: 20%;
         margin-left: 10px;
+        
     }
 
     .first-card {
@@ -372,6 +387,10 @@ li a:hover {
 
     .flex-container {
         padding: 40px;
+    }
+
+    .about-me-container {
+        flex-direction: row;
     }
 }
 /* Add media queries to improve content layout for screens larger than 1500px.*/
