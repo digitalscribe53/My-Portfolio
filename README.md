@@ -17,8 +17,8 @@ All code within this project was written by me. Some of the advanced CSS style t
 An MIT License is included with this project for the reuse of any of the code that may be helpful to other developers. 
 
 ## Active Page URL 
-
+[My Portfolio](https://digitalscribe53.github.io/My-Portfolio/) 
 
 ## Screen Shot of Web Page
-
+![Screenshot](https://github.com/digitalscribe53/My-Portfolio/blob/main/assets/images/My-Portfolio-snip.JPG?raw=true)
 
