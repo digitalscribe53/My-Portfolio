@@ -28,7 +28,9 @@ body {
 h1, h2, h3, h4 {
     background-color: var(--aqua);
     background-image: linear-gradient(to bottom, var(--light-gray), var(--aqua));
-    display: inline-block;    
+    display: inline-block;   
+    padding-left: 20px;
+    padding-right: 20px; 
 }
 
 h1 {
@@ -56,8 +58,10 @@ h4 {
     list-style: none;
 }
 
-.header li {
-    font-size: 18px;
+#navbarNav li {
+    font-size: 24px;
+    margin-left: 20px;
+    margin-right: 20px;
     
     
 }
@@ -65,6 +69,10 @@ h4 {
 .header a {
     color: var(--aqua);
     text-decoration: none;
+}
+
+.my-name {
+    font-size: 40px;
 }
 
 
@@ -82,46 +90,52 @@ h4 {
    padding: 15px 5px;    
 }
 
-.about-me h2 {
-    margin-bottom: 20px; 
-}
 
 .about-me {
     background-image: var(--bg-gradient2);
-    text-align: center;
-    
 }
 
+#projects-section {
+    background-image: var(--bg-gradient2);
+}
+
+#my-name {
+    font-size: 25px;
+}
 
 .about-me div { 
-    height: 50vh;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
 
 }
-
 
 .about-me p {
     text-wrap: pretty;
     text-shadow: 1px 1px black;
-    font-size: 16px;
+    font-size: 24px;
     align-self: bottom;
+    
 }
 
 .about-me img {
     max-width: 88%;
     height: 80%;
-    border-radius: 5%;
+    border-radius: 30%;
     
 }
 
 /* Avatar image is contained in a flexbox to help control its size and location on the page. */
 .about-me-photo-box {
-    max-height: 94%;
-  width: 88%;
+    max-height: 70%;
+    width: 88%;
     border-radius: 50%;
 }
 
 .about-me-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Position the card headers relative to their container to control their placement */
@@ -244,6 +258,20 @@ li a:hover {
     box-shadow: inset 0px 0px 10px var(--aqua);
 }
 
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.caveat-exclusive-font {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 250;
+  font-style: normal;
+}
+  
+
 /* Add media queries to improve content layout for screens larger than 700px. */
 @media screen and (max-width: 700px) {
     .footer-container {
@@ -266,25 +294,12 @@ li a:hover {
 }
 
 @media screen and (min-width: 700px) {
-    .nav-bar {
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        min-height: 20% vh;
-        
+    .container-fluid {
+        padding-left: 100px;
+        padding-right: 100px;  
     }
 
-    .nav-bar li {
-        display: inline;
-        margin: 0 6px 0 6px;
-        font-size: 22px;
-    }
-
-    .nav-bar h1 {
-        margin: 40px;
-        font-size: 35px;
-    }
+    
     
     .about-me p {
         font-size: 20px;
@@ -297,6 +312,10 @@ li a:hover {
         
     }
 
+    .flex-container {
+        padding-bottom: 40px;
+    }
+
     .first-card {
         margin: 0 30px 0 30px;
     }
@@ -306,7 +325,7 @@ li a:hover {
         flex: 1 1 20%;
     }
 
-    .about-me h2, .projects h2 {
+    .about-me h2, .projects h2 .footer-container h4 {
         font-size: 30px;
     }
 
@@ -315,7 +334,7 @@ li a:hover {
     }
 
     .footer-container {
-        margin-top: 20px;
+        
         padding: 20px 0 20px 0;
     }
 
@@ -342,13 +361,15 @@ li a:hover {
         font-size: 35px;
     }
 
+    .about-me h2 {
+        margin-top: 20px;
+    }
+
     .about-me p {
         font-size: 24px;
     }
 
-    .about-me-container {
-        margin: 20px;
-    }
+    
 
     .flex-container {
         padding: 20px;
@@ -385,7 +406,7 @@ li a:hover {
 
     .about-me p {
         margin: 0 50px 0 50px;
-        font-size: 28px;
+        font-size: 40px;
     }
 
     .about-me h2, .projects h2 {
@@ -408,7 +429,13 @@ li a:hover {
     .about-me-container {
         flex-direction: row;
     }
+
+    .about-me h2 {
+        position: absolute;
+        top: 80px;
+    }
 }
+
 /* Add media queries to improve content layout for screens larger than 1500px.*/
 @media screen and (min-width: 1500px) {
     .first-card {
